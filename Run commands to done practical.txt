@@ -1,0 +1,17 @@
+#Apply it using:
+kubectl apply -f storage-class.yaml
+#Apply the configuration:
+kubectl apply -f pv.yaml
+#Apply Pvc it using:
+kubectl apply -f pvc.yaml
+#Apply the Pod configuration
+kubectl create -f pod.yml
+#Check the status of the PVC to see if it is bound to the PV:
+kubectl get pvc
+kubectl get pods
+kubectl exec -it storage-pod -- df -h
+#After the practical, clean up the resources:
+kubectl delete pod storage-pod
+kubectl delete pvc pvc-demo
+kubectl delete pv pv-demo
+kubectl delete sc standard
